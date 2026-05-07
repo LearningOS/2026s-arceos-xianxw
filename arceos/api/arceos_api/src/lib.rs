@@ -34,6 +34,12 @@ pub mod sys {
         pub fn ax_terminate() -> !;
     }
 }
+///随机数
+pub mod random {
+    define_api! {
+        pub fn ax_random() -> u128;
+    }
+}
 
 /// Time-related operations.
 pub mod time {

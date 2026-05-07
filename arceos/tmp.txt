@@ -1,0 +1,620 @@
+alt_alloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/exercises/alt_alloc)
+
+alt_axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/alt_axalloc)
+├── allocator v0.1.0 (https://github.com/arceos-org/allocator.git?tag=v0.1.0#16496d88)
+│   ├── bitmap-allocator v0.1.0
+│   │   └── bit_field v0.10.3
+│   └── rlsf v0.2.2
+│       ├── cfg-if v1.0.4
+│       ├── const-default v1.0.0
+│       ├── libc v0.2.186
+│       ├── rustversion v1.0.22 (proc-macro)
+│       └── svgbobdoc v0.3.0 (proc-macro)
+│           ├── base64 v0.13.1
+│           ├── proc-macro2 v1.0.106
+│           │   └── unicode-ident v1.0.24
+│           ├── quote v1.0.45
+│           │   └── proc-macro2 v1.0.106 (*)
+│           ├── syn v1.0.109
+│           │   ├── proc-macro2 v1.0.106 (*)
+│           │   ├── quote v1.0.45 (*)
+│           │   └── unicode-ident v1.0.24
+│           └── unicode-width v0.1.14
+├── axerrno v0.1.2
+│   ├── axerrno v0.2.2
+│   │   ├── log v0.4.29
+│   │   └── strum v0.27.2
+│   │       └── strum_macros v0.27.2 (proc-macro)
+│   │           ├── heck v0.5.0
+│   │           ├── proc-macro2 v1.0.106 (*)
+│   │           ├── quote v1.0.45 (*)
+│   │           └── syn v2.0.117
+│   │               ├── proc-macro2 v1.0.106 (*)
+│   │               ├── quote v1.0.45 (*)
+│   │               └── unicode-ident v1.0.24
+│   └── log v0.4.29
+├── bump_allocator v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/bump_allocator)
+│   └── allocator v0.1.0 (https://github.com/arceos-org/allocator.git?tag=v0.1.0#16496d88) (*)
+├── cfg-if v1.0.4
+├── kspin v0.1.1
+│   ├── cfg-if v1.0.4
+│   └── kernel_guard v0.1.2 (/home/xianxw/2026s-arceos-xianxw/crates/kernel_guard)
+│       ├── cfg-if v1.0.4
+│       └── crate_interface v0.1.4 (proc-macro)
+│           ├── proc-macro2 v1.0.106 (*)
+│           ├── quote v1.0.45 (*)
+│           └── syn v2.0.117 (*)
+├── log v0.4.29
+└── memory_addr v0.3.2
+
+arceos_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_api)
+├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc)
+│   ├── allocator v0.1.0 (https://github.com/arceos-org/allocator.git?tag=v0.1.0#16496d88) (*)
+│   ├── axerrno v0.1.2 (*)
+│   ├── cfg-if v1.0.4
+│   ├── kspin v0.1.1 (*)
+│   ├── log v0.4.29
+│   └── memory_addr v0.3.2
+├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig)
+│   [build-dependencies]
+│   ├── serde v1.0.228
+│   │   └── serde_core v1.0.228
+│   └── toml_edit v0.22.27
+│       ├── indexmap v2.6.0
+│       │   ├── equivalent v1.0.2
+│       │   └── hashbrown v0.15.5
+│       ├── toml_datetime v0.6.11
+│       ├── toml_write v0.1.2
+│       └── winnow v0.7.15
+├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver)
+│   ├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+│   ├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+│   ├── axdriver_base v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   ├── axdriver_block v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   ├── axdriver_base v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   └── log v0.4.29
+│   ├── axdriver_display v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   └── axdriver_base v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   ├── axdriver_net v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   ├── axdriver_base v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   ├── log v0.4.29
+│   │   └── spin v0.9.8
+│   │       └── lock_api v0.4.14
+│   │           └── scopeguard v1.2.0
+│   ├── axdriver_pci v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   └── virtio-drivers v0.7.5
+│   │       ├── bitflags v2.11.1
+│   │       ├── enumn v0.1.14 (proc-macro)
+│   │       │   ├── proc-macro2 v1.0.106 (*)
+│   │       │   ├── quote v1.0.45 (*)
+│   │       │   └── syn v2.0.117 (*)
+│   │       ├── log v0.4.29
+│   │       └── zerocopy v0.7.35
+│   │           ├── byteorder v1.5.0
+│   │           └── zerocopy-derive v0.7.35 (proc-macro)
+│   │               ├── proc-macro2 v1.0.106 (*)
+│   │               ├── quote v1.0.45 (*)
+│   │               └── syn v2.0.117 (*)
+│   ├── axdriver_virtio v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   ├── axdriver_base v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e)
+│   │   ├── axdriver_block v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e) (*)
+│   │   └── virtio-drivers v0.7.5 (*)
+│   ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal)
+│   │   ├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+│   │   ├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+│   │   ├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog)
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── chrono v0.4.44
+│   │   │   │   ├── iana-time-zone v0.1.65
+│   │   │   │   └── num-traits v0.2.19
+│   │   │   │       [build-dependencies]
+│   │   │   │       └── autocfg v1.5.0
+│   │   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   └── log v0.4.29
+│   │   │   [dev-dependencies]
+│   │   │   └── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+│   │   ├── bitflags v2.11.1
+│   │   ├── cfg-if v1.0.4
+│   │   ├── handler_table v0.1.2
+│   │   ├── int_ratio v0.1.2
+│   │   ├── kernel_guard v0.1.2 (/home/xianxw/2026s-arceos-xianxw/crates/kernel_guard) (*)
+│   │   ├── kspin v0.1.1 (*)
+│   │   ├── lazyinit v0.2.2
+│   │   ├── linkme v0.3.36
+│   │   │   └── linkme-impl v0.3.36 (proc-macro)
+│   │   │       ├── proc-macro2 v1.0.106 (*)
+│   │   │       ├── quote v1.0.45 (*)
+│   │   │       └── syn v2.0.117 (*)
+│   │   ├── log v0.4.29
+│   │   ├── memory_addr v0.3.2
+│   │   ├── page_table_entry v0.4.3
+│   │   │   ├── bitflags v2.11.1
+│   │   │   ├── memory_addr v0.3.2
+│   │   │   └── x86_64 v0.15.1
+│   │   │       ├── bit_field v0.10.3
+│   │   │       ├── bitflags v2.11.1
+│   │   │       ├── rustversion v1.0.22 (proc-macro)
+│   │   │       └── volatile v0.4.6
+│   │   ├── page_table_multiarch v0.4.3
+│   │   │   ├── log v0.4.29
+│   │   │   ├── memory_addr v0.3.2
+│   │   │   ├── page_table_entry v0.4.3 (*)
+│   │   │   └── x86 v0.52.0
+│   │   │       ├── bit_field v0.10.3
+│   │   │       ├── bitflags v1.3.2
+│   │   │       └── raw-cpuid v10.7.0
+│   │   │           └── bitflags v1.3.2
+│   │   ├── percpu v0.1.7
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── percpu_macros v0.1.7 (proc-macro)
+│   │   │   │   ├── proc-macro2 v1.0.106 (*)
+│   │   │   │   ├── quote v1.0.45 (*)
+│   │   │   │   └── syn v2.0.117 (*)
+│   │   │   ├── spin v0.9.8 (*)
+│   │   │   └── x86 v0.52.0 (*)
+│   │   ├── raw-cpuid v11.6.0
+│   │   │   └── bitflags v2.11.1
+│   │   ├── static_assertions v1.1.0
+│   │   ├── x2apic v0.4.3
+│   │   │   ├── bit v0.1.1
+│   │   │   ├── bitflags v1.3.2
+│   │   │   ├── paste v1.0.15 (proc-macro)
+│   │   │   ├── raw-cpuid v10.7.0 (*)
+│   │   │   └── x86_64 v0.14.13
+│   │   │       ├── bit_field v0.10.3
+│   │   │       ├── bitflags v2.11.1
+│   │   │       ├── rustversion v1.0.22 (proc-macro)
+│   │   │       └── volatile v0.4.6
+│   │   ├── x86 v0.52.0 (*)
+│   │   └── x86_64 v0.15.1 (*)
+│   │   [build-dependencies]
+│   │   └── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+│   ├── cfg-if v1.0.4
+│   └── log v0.4.29
+├── axerrno v0.1.2 (*)
+├── axfeat v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/axfeat)
+│   ├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+│   ├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+│   ├── axfs v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axfs)
+│   │   ├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+│   │   ├── axdriver_block v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e) (*)
+│   │   ├── axerrno v0.1.2 (*)
+│   │   ├── axfs_devfs v0.1.2
+│   │   │   ├── axfs_vfs v0.1.2
+│   │   │   │   ├── axerrno v0.1.2 (*)
+│   │   │   │   ├── bitflags v2.11.1
+│   │   │   │   └── log v0.4.29
+│   │   │   ├── log v0.4.29
+│   │   │   └── spin v0.9.8 (*)
+│   │   ├── axfs_ramfs v0.1.2
+│   │   │   ├── axfs_vfs v0.1.2 (*)
+│   │   │   ├── log v0.4.29
+│   │   │   └── spin v0.9.8 (*)
+│   │   ├── axfs_vfs v0.1.2 (*)
+│   │   ├── axio v0.1.2
+│   │   │   └── axerrno v0.1.2 (*)
+│   │   │   [build-dependencies]
+│   │   │   └── autocfg v1.5.0
+│   │   ├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync)
+│   │   │   ├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask)
+│   │   │   │   ├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+│   │   │   │   ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+│   │   │   │   ├── cfg-if v1.0.4
+│   │   │   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   │   │   ├── kernel_guard v0.1.2 (/home/xianxw/2026s-arceos-xianxw/crates/kernel_guard) (*)
+│   │   │   │   ├── kspin v0.1.1 (*)
+│   │   │   │   ├── lazyinit v0.2.2
+│   │   │   │   ├── log v0.4.29
+│   │   │   │   ├── memory_addr v0.3.2
+│   │   │   │   ├── percpu v0.1.7 (*)
+│   │   │   │   ├── scheduler v0.1.0 (https://github.com/arceos-org/scheduler.git?tag=v0.1.0#c8d25d9a)
+│   │   │   │   │   └── linked_list v0.1.0 (https://github.com/arceos-org/linked_list.git?tag=v0.1.0#34c8db30)
+│   │   │   │   └── timer_list v0.1.0
+│   │   │   │   [dev-dependencies]
+│   │   │   │   ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+│   │   │   │   ├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+│   │   │   │   └── rand v0.8.6
+│   │   │   │       ├── libc v0.2.186
+│   │   │   │       ├── rand_chacha v0.3.1
+│   │   │   │       │   ├── ppv-lite86 v0.2.21
+│   │   │   │       │   │   └── zerocopy v0.8.48
+│   │   │   │       │   └── rand_core v0.6.4
+│   │   │   │       │       └── getrandom v0.2.17
+│   │   │   │       │           ├── cfg-if v1.0.4
+│   │   │   │       │           └── libc v0.2.186
+│   │   │   │       └── rand_core v0.6.4 (*)
+│   │   │   └── kspin v0.1.1 (*)
+│   │   │   [dev-dependencies]
+│   │   │   ├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+│   │   │   ├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+│   │   │   └── rand v0.8.6 (*)
+│   │   ├── cap_access v0.1.0
+│   │   │   └── bitflags v2.11.1
+│   │   ├── cfg-if v1.0.4
+│   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   ├── fatfs v0.4.0 (https://github.com/rafalh/rust-fatfs?rev=85f06e0#85f06e08)
+│   │   │   ├── bitflags v2.11.1
+│   │   │   └── log v0.4.29
+│   │   ├── lazyinit v0.2.2
+│   │   └── log v0.4.29
+│   │   [dev-dependencies]
+│   │   ├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+│   │   ├── axdriver_block v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e) (*)
+│   │   ├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+│   │   └── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+│   ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+│   ├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+│   ├── axruntime v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axruntime)
+│   │   ├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+│   │   ├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+│   │   ├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+│   │   ├── axfs v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axfs) (*)
+│   │   ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+│   │   ├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+│   │   ├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm)
+│   │   │   ├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+│   │   │   ├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+│   │   │   ├── axerrno v0.1.2 (*)
+│   │   │   ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   ├── lazyinit v0.2.2
+│   │   │   ├── log v0.4.29
+│   │   │   ├── memory_addr v0.3.2
+│   │   │   └── memory_set v0.3.2
+│   │   │       └── memory_addr v0.3.2
+│   │   ├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+│   │   ├── chrono v0.4.44 (*)
+│   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   ├── kernel_guard v0.1.2 (/home/xianxw/2026s-arceos-xianxw/crates/kernel_guard) (*)
+│   │   └── percpu v0.1.7 (*)
+│   ├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+│   └── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── axfs v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axfs) (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axio v0.1.2 (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axruntime v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axruntime) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+└── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+
+arceos_posix_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_posix_api)
+├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+├── axerrno v0.1.2 (*)
+├── axfeat v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/axfeat) (*)
+├── axfs v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axfs) (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axio v0.1.2 (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axruntime v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axruntime) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── flatten_objects v0.1.0
+│   └── bitmaps v3.2.1
+├── lazy_static v1.5.0
+│   └── spin v0.9.8 (*)
+├── spin v0.9.8 (*)
+└── static_assertions v1.1.0
+[build-dependencies]
+├── bindgen v0.69.5
+│   ├── bitflags v2.11.1
+│   ├── cexpr v0.6.0
+│   │   └── nom v7.1.3
+│   │       ├── memchr v2.8.0
+│   │       └── minimal-lexical v0.2.1
+│   ├── clang-sys v1.8.1
+│   │   ├── glob v0.3.3
+│   │   ├── libc v0.2.186
+│   │   └── libloading v0.8.9
+│   │       └── cfg-if v1.0.4
+│   │   [build-dependencies]
+│   │   └── glob v0.3.3
+│   ├── itertools v0.12.1
+│   │   └── either v1.15.0
+│   ├── lazy_static v1.5.0
+│   ├── lazycell v1.3.0
+│   ├── log v0.4.29
+│   ├── prettyplease v0.2.37
+│   │   ├── proc-macro2 v1.0.106 (*)
+│   │   └── syn v2.0.117 (*)
+│   ├── proc-macro2 v1.0.106 (*)
+│   ├── quote v1.0.45 (*)
+│   ├── regex v1.12.3
+│   │   ├── aho-corasick v1.1.4
+│   │   │   └── memchr v2.8.0
+│   │   ├── memchr v2.8.0
+│   │   ├── regex-automata v0.4.14
+│   │   │   ├── aho-corasick v1.1.4 (*)
+│   │   │   ├── memchr v2.8.0
+│   │   │   └── regex-syntax v0.8.10
+│   │   └── regex-syntax v0.8.10
+│   ├── rustc-hash v1.1.0
+│   ├── shlex v1.3.0
+│   ├── syn v2.0.117 (*)
+│   └── which v4.4.2
+│       ├── either v1.15.0
+│       ├── home v0.5.11
+│       └── rustix v0.38.44
+│           ├── bitflags v2.11.1
+│           └── linux-raw-sys v0.4.15
+└── home v0.5.11
+
+axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+
+axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+
+axdisplay v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdisplay)
+├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+├── axdriver_display v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── lazyinit v0.2.2
+└── log v0.4.29
+
+axdma v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdma)
+├── allocator v0.1.0 (https://github.com/arceos-org/allocator.git?tag=v0.1.0#16496d88) (*)
+├── axalloc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axalloc) (*)
+├── axconfig v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axconfig) (*)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── kspin v0.1.1 (*)
+├── log v0.4.29
+└── memory_addr v0.3.2
+
+axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+
+axfeat v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/axfeat) (*)
+
+axfs v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axfs) (*)
+
+axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+
+axlibc v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/ulib/axlibc)
+├── arceos_posix_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_posix_api) (*)
+├── axerrno v0.1.2 (*)
+├── axfeat v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/axfeat) (*)
+└── axio v0.1.2 (*)
+[build-dependencies]
+└── bindgen v0.69.5 (*)
+
+axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+
+axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+
+axnet v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axnet)
+├── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+├── axdriver_net v0.1.0 (https://github.com/arceos-org/axdriver_crates.git?tag=v0.1.0#78686a7e) (*)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axio v0.1.2 (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── cfg-if v1.0.4
+├── lazyinit v0.2.2
+├── log v0.4.29
+├── smoltcp v0.10.0 (https://github.com/rcore-os/smoltcp.git?rev=2ade274#2ade2747)
+│   ├── bitflags v1.3.2
+│   ├── byteorder v1.5.0
+│   ├── cfg-if v1.0.4
+│   ├── heapless v0.7.17
+│   │   ├── hash32 v0.2.1
+│   │   │   └── byteorder v1.5.0
+│   │   ├── spin v0.9.8 (*)
+│   │   └── stable_deref_trait v1.2.1
+│   │   [build-dependencies]
+│   │   └── rustc_version v0.4.1
+│   │       └── semver v1.0.28
+│   ├── log v0.4.29
+│   └── managed v0.8.0
+└── spin v0.9.8 (*)
+
+axruntime v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axruntime) (*)
+
+axstd v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/ulib/axstd)
+├── arceos_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_api) (*)
+├── axerrno v0.1.2 (*)
+├── axfeat v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/axfeat) (*)
+├── axio v0.1.2 (*)
+└── kspin v0.1.1 (*)
+
+axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+
+axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+
+bump_allocator v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/bump_allocator) (*)
+
+elf v0.7.4 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/elf)
+
+h_1_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/h_1_0)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── memoffset v0.9.1
+│   [build-dependencies]
+│   └── autocfg v1.5.0
+├── riscv v0.6.0 (https://github.com/rcore-os/riscv#11d43cf7)
+│   ├── bare-metal v0.2.5
+│   │   [build-dependencies]
+│   │   └── rustc_version v0.2.3
+│   │       └── semver v0.9.0
+│   │           └── semver-parser v0.7.0
+│   ├── bit_field v0.10.3
+│   ├── bitflags v1.3.2
+│   └── log v0.4.29
+│   [build-dependencies]
+│   └── riscv-target v0.1.2
+│       ├── lazy_static v1.5.0
+│       └── regex v1.12.3 (*)
+├── sbi-rt v0.0.2
+│   └── sbi-spec v0.0.4
+│       └── static_assertions v1.1.0
+├── sbi-spec v0.0.6
+│   └── static_assertions v1.1.0
+└── tock-registers v0.8.1
+
+h_2_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/h_2_0)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axstd v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/ulib/axstd) (*)
+├── log v0.4.29
+├── memory_addr v0.3.2
+└── riscv_vcpu v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/riscv_vcpu)
+    ├── axerrno v0.1.2 (*)
+    ├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+    ├── bit_field v0.10.3
+    ├── bitflags v2.11.1
+    ├── cfg-if v1.0.4
+    ├── log v0.4.29
+    ├── memoffset v0.9.1 (*)
+    ├── memory_addr v0.3.2
+    ├── riscv v0.6.0 (https://github.com/rcore-os/riscv#11d43cf7) (*)
+    ├── riscv-decode v0.2.1 (https://github.com/KuangjuX/riscv-decode.git#4102b8ef)
+    ├── sbi-rt v0.0.2 (*)
+    ├── sbi-spec v0.0.6 (*)
+    └── tock-registers v0.8.1
+
+h_3_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/h_3_0)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axstd v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/ulib/axstd) (*)
+├── log v0.4.29
+├── memory_addr v0.3.2
+└── riscv_vcpu v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/riscv_vcpu) (*)
+
+h_4_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/h_4_0)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axstd v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/ulib/axstd) (*)
+├── log v0.4.29
+├── memory_addr v0.3.2
+└── riscv_vcpu v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/riscv_vcpu) (*)
+
+m_1_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/m_1_0)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+└── linkme v0.3.36 (*)
+
+m_1_1 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/m_1_1)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+└── linkme v0.3.36 (*)
+
+m_2_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/m_2_0)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+└── linkme v0.3.36 (*)
+
+m_3_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/m_3_0)
+├── arceos_posix_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_posix_api) (*)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── elf v0.7.4 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/elf)
+├── kernel-elf-parser v0.1.0
+│   ├── axerrno v0.1.2 (*)
+│   ├── cfg-if v1.0.4
+│   ├── log v0.4.29
+│   ├── memory_addr v0.3.2
+│   ├── page_table_entry v0.4.3 (*)
+│   └── xmas-elf v0.9.1
+│       └── zero v0.1.3
+└── linkme v0.3.36 (*)
+
+m_3_1 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/m_3_1)
+├── arceos_posix_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_posix_api) (*)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── elf v0.7.4 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/elf)
+├── kernel-elf-parser v0.1.0 (*)
+└── linkme v0.3.36 (*)
+
+origin v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/payload/origin)
+
+print_with_colord v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/exercises/print_with_color)
+
+ramfs_rename v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/exercises/ramfs_rename)
+├── axfs_ramfs v0.1.2 (*)
+├── axfs_vfs v0.1.2 (*)
+├── axstd v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/ulib/axstd) (*)
+└── crate_interface v0.1.4 (proc-macro) (*)
+
+riscv_vcpu v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/riscv_vcpu) (*)
+
+simple_hv v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/exercises/simple_hv)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── memoffset v0.9.1 (*)
+├── riscv v0.6.0 (https://github.com/rcore-os/riscv#11d43cf7) (*)
+├── sbi-rt v0.0.2 (*)
+├── sbi-spec v0.0.6 (*)
+└── tock-registers v0.8.1
+
+skernel v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/payload/skernel)
+
+skernel2 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/payload/skernel2)
+
+support_hashmap v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/exercises/support_hashmap)
+
+sys_map v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/exercises/sys_map)
+├── arceos_posix_api v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/api/arceos_posix_api) (*)
+├── axerrno v0.1.2 (*)
+├── axhal v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axhal) (*)
+├── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+├── axmm v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axmm) (*)
+├── axsync v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axsync) (*)
+├── axtask v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axtask) (*)
+├── bitflags v2.11.1
+├── elf v0.7.4 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/elf)
+├── kernel-elf-parser v0.1.0 (*)
+├── linkme v0.3.36 (*)
+└── memory_addr v0.3.2
+
+u_1_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_1_0)
+
+u_2_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_2_0)
+
+u_3_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_3_0)
+
+u_4_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_4_0)
+
+u_5_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_5_0)
+
+u_6_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_6_0)
+└── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+
+u_6_1 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_6_1)
+└── axlog v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axlog) (*)
+
+u_7_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_7_0)
+└── axdriver v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/modules/axdriver) (*)
+
+u_8_0 v0.1.0 (/home/xianxw/2026s-arceos-xianxw/arceos/tour/u_8_0)
