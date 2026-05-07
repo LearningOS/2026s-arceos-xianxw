@@ -1,3 +1,4 @@
+extern crate alloc;
 use arceos_api::random::ax_random;
 use alloc::vec::Vec;
 const INITIAL_CAPACITY: usize = 16;
