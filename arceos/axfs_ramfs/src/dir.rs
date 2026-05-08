@@ -98,6 +98,37 @@ impl VfsNodeOps for DirNode {
         }
     }
 
+    fn rename(&self, src_path: &str, dst_path: &str) -> VfsResult {
+        let (name, rest) = split_path(src_path);
+        if let Some(rest) = rest {
+            match name {
+                "" | "." => self.rename(rest, dst_path),
+                ".." => self.parent().ok_or(VfsError::NotFound)?.rename(rest, dst_path),
+                _ => {
+                    let subdir = self.children.read().get(name).ok_or(VfsError::NotFound)?.clone();
+                    subdir.rename(rest, dst_path)
+                }
+            }
+        } else {
+            // dst_path may be a full path like "/tmp/f2", extract the last component
+            let mut dst_name = dst_path;
+            loop {
+                let (name_part, rest_part) = split_path(dst_name);
+                if let Some(rest) = rest_part {
+                    dst_name = rest;
+                } else {
+                    dst_name = name_part;
+                    break;
+                }
+            }
+            let mut children = self.children.write();
+            let node = children.get(name).ok_or(VfsError::NotFound)?.clone();
+            children.remove(name);
+            children.insert(dst_name.into(), node);
+            Ok(())
+        }
+    }
+
     fn read_dir(&self, start_idx: usize, dirents: &mut [VfsDirEntry]) -> VfsResult<usize> {
         let children = self.children.read();
         let mut children = children.iter().skip(start_idx.max(2) - 2);
