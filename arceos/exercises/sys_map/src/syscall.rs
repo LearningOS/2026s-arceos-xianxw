@@ -7,6 +7,7 @@ use axerrno::LinuxError;
 use axtask::current;
 use axtask::TaskExtRef;
 use axhal::paging::MappingFlags;
+use axhal::mem::{VirtAddr, MemoryAddr};
 use arceos_posix_api as api;
 
 const SYS_IOCTL: usize = 29;
@@ -131,16 +132,88 @@ fn handle_syscall(tf: &TrapFrame, syscall_num: usize) -> isize {
     ret
 }
 
-#[allow(unused_variables)]
+
 fn sys_mmap(
     addr: *mut usize,
     length: usize,
     prot: i32,
     flags: i32,
     fd: i32,
-    _offset: isize,
+    offset: isize,
 ) -> isize {
-    unimplemented!("no sys_mmap!");
+    syscall_body!(sys_mmap, {
+        let prot = MmapProt::from_bits(prot).ok_or(LinuxError::EINVAL)?;
+        let flags = MmapFlags::from_bits(flags).ok_or(LinuxError::EINVAL)?;
+
+        if length == 0 {
+            return Err(LinuxError::EINVAL);
+        }
+        let size = (length + 0xFFF) & !0xFFF;
+        let map_flags: MappingFlags = prot.into();
+
+        let curr = current();
+        let mut uspace = curr.task_ext().aspace.lock();
+
+        let vaddr = if flags.contains(MmapFlags::MAP_FIXED) {
+            let vaddr = VirtAddr::from(addr as usize).align_down_4k();
+            let _ = uspace.unmap(vaddr, size);
+            vaddr
+        } else {
+            let hint = if addr as usize == 0 {
+                uspace.base() + 0x1000_0000
+            } else {
+                VirtAddr::from(addr as usize).align_down_4k()
+            };
+            let limit = memory_addr::VirtAddrRange::from_start_size(uspace.base(), uspace.size());
+            uspace.find_free_area(hint, size, limit)
+                .ok_or(LinuxError::ENOMEM)?
+        };
+
+        uspace.map_alloc(vaddr, size, map_flags, true)
+            .map_err(|_| LinuxError::ENOMEM)?;
+
+        if !flags.contains(MmapFlags::MAP_ANONYMOUS) {
+            if fd < 0 {
+                return Err(LinuxError::EBADF);
+            }
+            let saved_pos = api::sys_lseek(fd, 0, 1); // SEEK_CUR
+            if saved_pos < 0 {
+                return Err(LinuxError::EBADF);
+            }
+            //找偏移
+            let seek_result = api::sys_lseek(fd, offset as _, 0); // SEEK_SET
+            if seek_result < 0 {
+                return Err(LinuxError::EINVAL);
+            }
+
+
+            use alloc::vec;
+            let chunk_size = 4096usize;
+            let mut kernel_buf = vec![0u8; chunk_size];
+            let mut total_read: usize = 0;
+            while total_read < length {
+                let remaining = length - total_read;
+                let to_read = remaining.min(chunk_size);
+                let n = api::sys_read(fd, kernel_buf.as_mut_ptr() as *mut _, to_read);
+                if n < 0 {
+                    api::sys_lseek(fd, saved_pos as _, 0);
+                    return Err(LinuxError::EIO);
+                }
+                if n == 0 {
+                    break; // EOF
+                }
+
+                uspace.write(vaddr + total_read, &kernel_buf[..n as usize])
+                    .map_err(|_| LinuxError::EIO)?;
+                total_read += n as usize;
+            }
+
+
+            api::sys_lseek(fd, saved_pos as _, 0);
+        }
+
+        Ok(vaddr.as_usize())
+    })
 }
 
 fn sys_openat(dfd: c_int, fname: *const c_char, flags: c_int, mode: api::ctypes::mode_t) -> isize {
