@@ -14,9 +14,11 @@ qemu_args-x86_64 := \
   -machine q35 \
   -kernel $(OUT_ELF)
 
+OPENBIOS ?= $(shell find /usr/local/share/qemu /usr/share/qemu -name 'opensbi-riscv64-generic-fw_dynamic.bin' 2>/dev/null | head -1)
+
 qemu_args-riscv64 := \
   -machine virt \
-  -bios default \
+  -bios $(if $(OPENBIOS),$(OPENBIOS),default) \
   -kernel $(OUT_BIN)
 
 qemu_args-aarch64 := \
